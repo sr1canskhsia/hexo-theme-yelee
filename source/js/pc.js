@@ -84,6 +84,7 @@ define([], function(){
         });
     }
 
+    /*
     var miniArchives = function(){
         if(yiliaConfig.isPost) {
             $(".post-list").addClass("toc-article");
@@ -104,6 +105,7 @@ define([], function(){
             });
         }
     }()
+    */
 
     if (yiliaConfig.jquery_ui[0]) {
         var tooltip = function(){
@@ -194,9 +196,10 @@ define([], function(){
                     $resultArea.html("");
                     document.querySelector("#search-form").reset();
                     $resetButton.hide();
-                    $(".no-result").hide();
+                    //$(".no-result").hide();
                 }
-
+                
+                /*
                 $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
                     if (!$(e.target).text()) {
                         $(".no-result").show(200);
@@ -204,6 +207,7 @@ define([], function(){
                       $(".no-result").hide();
                     }
                 })
+                */
             })
         }()
     }

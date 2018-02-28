@@ -85,10 +85,10 @@ require([], function (){
 
     // Animate on Homepage
     if(!!yiliaConfig.animate) {
-        if(!!yiliaConfig.isHome) {
+        if(yiliaConfig.isHome || yiliaConfig.isCategory) {
             require([yiliaConfig.scrollreveal], function (ScrollReveal) {
                 var animationNames = [
-                "pulse", "fadeIn","fadeInRight", "flipInX", "lightSpeedIn","rotateInUpLeft", "slideInUp","zoomIn",
+                "pulse", "fadeIn","fadeInRight", "lightSpeedIn","rotateInUpLeft","zoomIn",
                 ],
                 len = animationNames.length,
                 randomAnimationName = animationNames[Math.ceil(Math.random() * len) - 1];
@@ -152,13 +152,16 @@ require([], function (){
     $("table").wrap("<div class='table-area'></div>");
 
     // Hide Comment Button
+    /*
     $(document).ready(function() {
         if ($("#comments").length < 1) {
             $("#scroll > a:nth-child(2)").hide();
         }
     })
+    */
 
     // Hide Labels
+    /*
     if(yiliaConfig.isArchive || yiliaConfig.isTag || yiliaConfig.isCategory) {
         $(document).ready(function() {
             $("#footer").after("<button class='hide-labels'>TAGS</button>");
@@ -167,6 +170,7 @@ require([], function (){
             })
         })
     }
+    */
 
     // Task lists in markdown
     $('ul > li').each(function() {

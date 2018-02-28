@@ -28,6 +28,7 @@ define([], function(){
     //第三步 -- 根据数据渲染DOM
     var renderDOM = function(){
         //生成节点
+        /* 
         var $viewer = document.createElement("div");
         $viewer.id = "viewer";
         $viewer.className = "hide";
@@ -74,10 +75,12 @@ define([], function(){
         document.ontouchstart=function(){
             return true;
         }
+        */
     }
 
     //第四步 -- 绑定 DOM 事件
     var bindDOM = function(){
+        /*
         var scaleW = scaleW;
         
         //滑动隐藏
@@ -137,6 +140,7 @@ define([], function(){
         $header[0].addEventListener("touchstart", function(){
             $('html, body').animate({scrollTop:0}, 'slow');
         }, false);
+        */
     };
 
     return{

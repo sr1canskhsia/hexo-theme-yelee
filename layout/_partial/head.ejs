@@ -44,7 +44,7 @@
 
 <%- css('css/style') %>
 
-<% if (is_home() && theme.animate){ %>
+<% if ((is_home() || is_category()) && theme.animate){ %>
     <style> .article { opacity: 0;} </style>
 <% } %>
 

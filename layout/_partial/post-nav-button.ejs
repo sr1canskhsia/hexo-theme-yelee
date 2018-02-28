@@ -9,8 +9,6 @@
             <a href="/" title="<%= __('tooltip.back2home') %>"><i class="fa fa-home"></i></a>
         <% } %>
 
-        <a title="<%= __('tooltip.miniArchives') %>"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
         <% if (post.next){ %>
             <a href="<%- url_for(post.next.path) %>" title="<%= __('tooltip.nextPost') %>: <%= post.next.title %>">
                 <i class="fa fa-angle-right"></i>
@@ -20,6 +18,6 @@
         <% } %>
     </div>
 
-    <%- list_posts({amount: 999}) %>
+    <%#- list_posts({amount: 999}) %>
 
 <% } %>
