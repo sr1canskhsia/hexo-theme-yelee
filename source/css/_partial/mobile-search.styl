@@ -1,24 +1,11 @@
 .search
-    width 68%
-    height 18px
-    margin-top 1px
-    padding 0
-    font-family inherit
-    border 2px solid transparent
-    border-bottom 2px solid lightgray
-    border-radius 2px
-    opacity .65
-    background none
-    &:hover
-        border 2px solid lightgray
-        opacity 1
-        box-shadow 0 0 10px rgba(0, 0, 0, .3)
+   width: 30%;
+   font-size: 13px;
 
-#search-form .fa-times
+#search-form-mobile .fa-times
     display none
     padding 1px .7em
     box-shadow: 0 0 3px rgba(0, 0, 0, .15)
-    cursor pointer
     color gray
     &:active
         background lightgray
@@ -28,8 +15,8 @@
         border: 1px solid lightgray
         box-shadow: 0 0 6px rgba(0, 0, 0, .25)
 
-#local-search-result
-    margin auto -12% auto -6%
+#local-search-result-mobile
+    margin auto 20%
     font-size .9rem
     text-align left
     word-break break-all
@@ -58,18 +45,3 @@
         border-bottom: 1px dashed @color
         font-weight: bold
         font-size .85rem
-
-/*
-p.no-result
-    display none
-    margin 2em 0 2em 6%
-    padding-bottom .5em
-    text-align left
-    color gray
-    font-family font-serif serif
-    border-bottom 2px solid lightgray
-*/
-
-@media screen and (max-width:800px) {
-    @import "_partial/mobile-search"
-}

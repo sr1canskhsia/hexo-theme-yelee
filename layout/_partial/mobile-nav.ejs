@@ -14,6 +14,15 @@
             <% if (theme.subtitle){ %>
             <p class="header-subtitle"><%=theme.subtitle%></p>
             <%}%>
+
+            <% if (theme.search.on){ %>
+                <form id="search-form-mobile">
+                <input type="text" id="local-search-input-mobile" name="q" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="<%= theme.search.onload %>" />
+                <i class="fa fa-times" onclick="resetSearchMobile()"></i>
+                </form>
+                <div id="local-search-result-mobile"></div>
+            <%}%>
+
             <nav class="header-menu">
                 <ul>
                 <% for (var i in theme.menu){ %>

@@ -143,6 +143,44 @@ define([], function(){
         */
     };
 
+    if (yiliaConfig.search) {
+        var search = function(){
+            require([yiliaConfig.rootUrl + 'js/search.js'], function(){
+                var inputArea = document.querySelector("#local-search-input-mobile");
+                var $HideWhenSearch = $("#toc, #tocButton, .post-list, #post-nav-button a:nth-child(2)");
+                var $resetButton = $("#search-form-mobile .fa-times");
+                var $resultArea = $("#local-search-result-mobile");
+
+                var getSearchFile = function(){
+                    var search_path = "search.xml";
+                    var path = yiliaConfig.rootUrl + search_path;
+                    searchFunc(path, 'local-search-input-mobile', 'local-search-result-mobile');
+                }
+
+                var getFileOnload = inputArea.getAttribute('searchonload');
+                if (yiliaConfig.search && getFileOnload === "true") {
+                    getSearchFile();
+                } else {
+                    inputArea.onfocus = function(){ getSearchFile() }
+                }
+
+                var HideTocArea = function(){
+                    $HideWhenSearch.css("visibility","hidden");
+                    $resetButton.show();
+                }
+                inputArea.oninput = function(){ HideTocArea() }
+                inputArea.onkeydown = function(){ if(event.keyCode==13) return false}
+
+                resetSearchMobile = function(){
+                    $HideWhenSearch.css("visibility","initial");
+                    $resultArea.html("");
+                    document.querySelector("#search-form-mobile").reset();
+                    $resetButton.hide();
+                }
+            })
+        }()
+    }
+    
     return{
         init: function(){
             //构造函数需要的参数
